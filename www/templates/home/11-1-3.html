@@ -1,0 +1,116 @@
+<ion-view view-title="piezascompletado-view" cache-view="false">
+	<ion-content>
+		<div id="nomostrar" class="overlayTip" ng-style="tipjuego" resize>
+			<div class="cajacent vMid" resize>
+				<div class="cennn">
+					<h2>TIPS DE JUEGO</h2>
+					<div class="tipsJuego flexRow vMid">
+						<div class="tipBoxIcon">
+							<span class="icon-box tipBox"></span>
+							<div class="tipBoxNumber"><span>1</span></div>  
+						</div>
+						<div class="tipBoxText">
+							<p>Por cada compra, recibirás una prenda para que vistas tu avatar.</p>
+						</div>
+					</div>
+					<div class="tipsJuego flexRow vMid">
+						<div class="tipBoxIcon">
+							<span class="icon-box tipBox"></span>
+							<div class="tipBoxNumber"><span>2</span></div>  
+						</div>
+						<div class="tipBoxText">
+							<p>
+								Cuando lo termines de vestir, podrás
+								invitar a otro amigo a que se registre en <b>GANGASTIK</b>.
+							</p>
+						</div>
+					</div>
+					<div class="tipsJuego flexRow vMid">
+						<div class="tipBoxIcon">
+							<span class="icon-box tipBox"></span>
+							<div class="tipBoxNumber"><span>3</span></div>  
+						</div>
+						<div class="tipBoxText">
+							<p>
+								Recibirás el 10% de los <b>GANGS</b> que él
+								sume por siempre ¿Aún no has invitado a
+								ningún amigo? <span class="colorlink" ui-sref="app.inviteamigo">¡Invítalo!</span>
+							</p>
+						</div>
+					</div>
+					<div class="center m10">
+						<span class="icon-close closeCenter" ng-click="cerrartips()"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card15 flexCol {{avatarsG.backgroundClass}}" altura-porcentaje="86">
+				<div class="panelInfo" ng-click="abririnfo()">
+					<span>
+						<span class="icon-info iconYellow fL"></span>
+					</span>
+					<!--span class='panelInfoTit blodGg'>¿QUE ES ESTO?</span-->
+					<span>
+						<span class="icon-arrow-right iconBlue fR">
+						</span>
+					</span>
+				</div>
+				<div class="amigosTop2">
+					<div class="completadoPieza" ng-if="avatarsG.faltantes == 0">
+						<h2>¡Gangástiko!</h2>
+						<h3>Haz <b>completado</b> tu avatar</h3>
+					</div>
+					<p class="amigosTopTit blodGg" ng-if="avatarsG.faltantes != 0">¡ OBTUVISTE UNA NUEVA PIEZA !</p>
+					<p ng-if="avatarsG.faltantes != 0">
+						TE FALTAN <b>{{avatarsG.faltantes}} PIEZA{{avatarsG.colocarS}}</b> MÁS PARA COMPLETAR <br>
+						UN SEGUNDO AMIGO 
+						<span class="bold">GANGASTIKO.</span>
+					</p>
+					<div class="amigo2">
+						<div>
+							<img src="img/{{avatarsG.imagenP}}" alt="">
+						</div>
+					</div>
+					<div class="flexRow hLeft">
+						<div class="clothing">
+							<div class="art">
+								<span>Camisa</span>
+								<img src="img/{{avatarsG.genero_url}}/{{avatarsG.siluetas.sil1}}1.png" alt="superior" />
+							</div>
+							<div class="art">
+								<span>Pantalón</span>
+								<img src="img/{{avatarsG.genero_url}}/{{avatarsG.siluetas.sil2}}2.png" alt="inferior" />
+							</div>
+							<div class="art">
+								<span>Zapatos</span>
+								<img src="img/{{avatarsG.genero_url}}/{{avatarsG.siluetas.sil3}}3.png" alt="shoes" />
+							</div>
+						</div>
+					</div>
+					<div class="amigosCompletados flexCol hCen">
+						<div class="compleAbsolute" botom-absolute-window="5">
+							<div class="completadosTop2 flexRow">
+								<span class="icon-arrow-left" style="display: none;"></span>
+								<span class="center">AMIGOS <span class="bold">COMPLETADOS</span></span> 
+								<span class="icon-arrow-right" style="display: none;"></span>
+							</div>
+							<div class="completadosBottom2">
+								<owl-carousel class="owl-carousel" data-options="{navigation: true, pagination: false, rewindNav : false, items: 10}">
+									<div owl-carousel-item="" class="amigosPoints" ng-repeat="avatar in avatarsG.avatars.cantidad" ng-if="avatarsG.avatars.total > 0">
+										<img src="img/{{avatarsG.genero_img_avatar}}" alt="" /> 
+										<span class="amigosNumber">{{avatar.num}}</span>
+									</div>
+								</owl-carousel>
+							</div>				
+						</div>
+						<div class="dest5" ng-click="direSiCompleto(avatarsG.num_silueta)"><!--ui-sref="app.gangaenviar"-->
+							CONTINUAR <span class="icon-arrow-right"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

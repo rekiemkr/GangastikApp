@@ -1,0 +1,60 @@
+<ion-view view-title="yaganlistouno-view" cache-view="false">
+	<ion-content>
+		<div class="overYeiii" resize></div>
+		<div class="yeiCont" resize>
+			<div class="yeiTit3" style="font-weight: bold;">¡LISTO!</div>
+			<div class="lineCamb2 line1-1"></div>
+			<div class="yeiTxt2" style="top:41%;">
+				Tu código fue aceptado
+				<br>
+				<br>
+				disfruta tu aventura GANGÁSTIK.
+				<br>
+			</div>
+			<div class="lineCamb2 line1-2"></div>
+			<div class="yeiTxt4">
+				Ganaste:
+				<span class="G500" style="font-weight: bold;">{{dato.gangsP}} GANGS</span>
+			</div>
+			<div class="yeiCenter" ng-click="agregarPieza()"> <!--ui-sref="app.piezascompletado"-->
+				<span class="icon-arrow-right"></span>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card14">
+				<div class="iconsCard10">
+					<a href="#"><span class="icon-info iconR"></span></a>
+				</div>
+				<div class="enun">
+					SUMA <b>{{dato.gangsP}} GANGS</b><br>
+					SI COMPRAS EL PRODUCTO
+				</div>
+				<div class="horario2">
+				</div>
+				<div id="productName2">
+					<div class="sep2"></div>
+					<div class="productName">{{date.informacion.nombre}}</div>
+				</div>
+				<div class="productStatus2">
+					<div class="antes">
+						<span class="destBig">${{dato.precio_antes}}</span>
+						<span>ANTES</span>
+					</div>
+					<div class="descuento">
+						<span>{{dato.descuento}}%</span>
+					</div>
+					<div class="ahora">
+						<span class="destBig">${{dato.precio_ahora}}</span>
+						<span>AHORA</span>
+					</div>
+				</div>
+				<div class="moreDetails">
+					<div class="moreDetailsInt">
+						<span class="int2">REDIMIR PRODUCTO</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

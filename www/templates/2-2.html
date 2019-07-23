@@ -1,0 +1,54 @@
+<ion-view view-title="registro">
+	<div class="atras-home" ui-sref="dos">
+		<span class="icon-arrow-left"></span>
+	</div>
+	<div class="row hMid main2-2 row-center">
+		<div class="cja anch1" altura-porcentaje="82">
+			<div class="logo2"><img src="img/logo-s.png" alt="logo"></div>
+			<div class="content scrollY alto400">
+				<div class="form">
+					<form ng-submit="registro()">
+						<div class="labelForm">
+						<div class="labelForm">
+							<span class="icon-user-plus iconForm" ng-style="stynombre"></span>
+							<input type="text" id="nombre" placeholder="Tu nombre" ng-model="nombre" ng-focus="expression" >
+						</div>
+						<div class="labelForm">
+							<span class="icon-user-plus iconForm" ng-style="styapellido"></span>
+							<input type="text" id="apellido" placeholder="Tu apellido" ng-model="apellido" ng-focus="apellido" >
+						</div>
+						<div class="labelForm">
+							<span class="icon-mail iconForm" ng-style="styemail"></span>
+							<input type="email" id="email" placeholder="Tu correo" ng-model="email" >
+						</div>
+							<span class="icon-calendar iconForm calendar-ico" ng-style="styfecha"></span>
+							<input type="text" id="fecha" placeholder="Fecha de nacimiento" ng-model="fecha" ng-style="styfecha" ng-click="openDatePicker()" ng-if="android">
+							<input class="dateclass placeholderclass" type="date" id="fechaios" placeholder="Fecha de nacimiento" ng-model="fechaios" ng-style="styfecha" ng-if="ios" ng-click="removePlaceholder()" ng-class="place">
+						</div>
+						<div class="labelForm">
+							<span class="icon-mark iconForm" ng-style="styciudad"></span>
+							<div id="ciudad" class="selectForm" modal-select="" ng-model="ciudad" options="ciudades" modal-title="Ciudad de residencia">
+								{{ciudad.nombre || &apos;Ciudad de residencia&apos;}}
+								<div class="option">
+									<span style="color: #000;">{{option.nombre}}</span>
+								</div>
+							</div>
+						</div>
+						<div class="labelForm">
+							<span class="icon-lock-open iconForm" ng-style="stypassa"></span>
+							<input type="password" id="passa" placeholder="Contraseña" ng-model="passa" >
+						</div>
+						<div class="labelForm">
+							<span class="icon-lock-open iconForm" ng-style="stypassb"></span>
+							<input type="password" id="passb" placeholder="Confirmar Contraseña" ng-model="passb" >
+						</div>
+						<div id="texto"></div>
+						<button class='btn lg'>REGÍSTRATE</button>
+					</form>
+				</div>
+				<span class="prompt" style="top: -10px;">¿Ya estas registrado?</span>
+				*<button class='btn2 lg cambioBTN2' ui-sref="ingreso">INICIAR SESIÓN</button>
+			</div>
+		</div>
+	</div>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view view-title="yagansestadocivil-view">
+	<ion-content>
+		<div class="back-white w100">
+			<div class="head">
+				<img src="img/logo.png" alt="">
+			</div>
+			<div id="for1" class="content2 flexCol secCora">
+				<div class="navi">
+					<img src="img/navi2.jpg" alt="">
+				</div>
+				<div>
+					<div class="coraTitle vhCen">
+						Como estás dedl corazon:
+					</div>
+					<div class="coraSect casado vhCen" ng-repeat="civil in estadicv.items" ng-class="{'classee1': estadicv.selected == civil}" ng-click="estadicv.selected = civil" data-id="{{civil.id}}">
+						{{civil.title}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot">
+			<button class='btn' ui-sref="app.yaganmarcasb">
+				SIGUIENTE
+			</button>
+		</div>
+	</ion-content>
+</ion-view>

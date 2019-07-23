@@ -1,0 +1,98 @@
+<ion-view view-title="gangaenviar-view">
+	<ion-content>
+		<div class="overYeiii" resize></div>
+		<div class="yeiCont" resize style="margin-top: 30px">
+			<div class="yeiTit5 blodGg relativeWOW">¡WOW!</div>
+			<div class="alto50"></div>
+			<div class="yeiTxt8">
+				TERMINASTE DE VESTIR<br> TU AVATAR, 
+				ASÍ QUE ES HORA <br>DE INVITAR A UN AMIGO <br>A GANGASTIK.<br> 
+				<br>
+				 CUANDO SE REGISTRE, COMENZARÁS A GANAR EL <br>10% DE LOS GANGS QUE ÉL ACUMULE POR SIEMPRE.
+				<br><br>
+			</div>
+			<div class="alto50"></div>
+			<div class="shareForm" style="margin-bottom:40px">
+				<form ng-submit="enviarAmigo()">
+					<div class="labelForm centCorreoCamb1">
+						<div class="cenEmailCamb1">
+							<span class="icon-mail iconForm"></span>
+							<input type="email" placeholder="E-mail de tu amigo" ng-model="email" />
+						</div>
+					</div>
+					<div class="btnsFoot">
+						<button class='btn2' ng-click="agregarAmigo()">ENVIAR </button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card15 flexCol" altura-porcentaje="86">
+				<div class="panelInfo" ng-click="abririnfo()">
+					<span>
+						<span class="icon-info iconYellow fL"></span>
+					</span>
+					<!--span class='panelInfoTit blodGg'>¿QUE ES ESTO?</span-->
+					<span>	
+						<span class="icon-arrow-right iconBlue fR">
+						</span>
+					</span>
+				</div>
+				<div class="amigosTop2">
+					<div class="completadoPieza" ng-if="avatarsG.faltantes == 0">
+						<h2>¡Gangástiko!</h2>
+						<h3>Haz <b>completado</b> tu avatar</h3>
+					</div>
+					<p class="amigosTopTit blodGg" ng-if="avatarsG.faltantes != 0">¡ OBTUVISTE UNA NUEVA PIEZA !</p>
+					<p ng-if="avatarsG.faltantes != 0">
+						TE FALTAN <b>{{avatarsG.faltantes}} PIEZA{{avatarsG.colocarS}}</b> MÁS PARA COMPLETAR <br>
+						UN SEGUNDO AMIGO 
+						<span class="bold">GANGASTIKO.</span>
+					</p>
+					<div class="amigo2">
+						<div>
+							<img src="img/{{avatarsG.imagenP}}" alt="">
+						</div>
+					</div>
+					<div class="flexRow hLeft">
+						<div class="clothing">
+							<div class="art">
+								<span>Camisa</span>
+								<img src="img/{{avatarsG.genero_url}}/{{avatarsG.siluetas.sil1}}1.png" alt="superior" />
+							</div>
+							<div class="art">
+								<span>Pantalón</span>
+								<img src="img/{{avatarsG.genero_url}}/{{avatarsG.siluetas.sil2}}2.png" alt="inferior" />
+							</div>
+							<div class="art">
+								<span>Zapatos</span>
+								<img src="img/{{avatarsG.genero_url}}/{{avatarsG.siluetas.sil3}}3.png" alt="shoes" />
+							</div>
+						</div>
+					</div>
+					<div class="amigosCompletados flexCol hCen">
+						<div class="compleAbsolute" botom-absolute-window="5">
+							<div class="completadosTop2 flexRow">
+								<span class="icon-arrow-left" style="display: none;"></span>
+								<span class="center">AMIGOS <span class="bold">COMPLETADOS</span></span> 
+								<span class="icon-arrow-right" style="display: none;"></span>
+							</div>
+							<div class="completadosBottom2">
+								<owl-carousel class="owl-carousel" data-options="{navigation: true, pagination: false, rewindNav : false, items: 10}">
+									<div owl-carousel-item="" class="amigosPoints" ng-repeat="avatar in avatarsG.avatars.cantidad" ng-if="avatarsG.avatars.total > 0">
+										<img src="img/{{avatarsG.genero_img_avatar}}" alt="" /> 
+										<span class="amigosNumber">{{avatar.num}}</span>
+									</div>
+								</owl-carousel>
+							</div>				
+						</div>
+						<div class="dest5"><!--ui-sref="app.gangaenviar"-->
+							CONTINUAR <span class="icon-arrow-right"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

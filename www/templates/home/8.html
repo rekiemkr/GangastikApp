@@ -1,0 +1,55 @@
+<ion-view view-title="yagans-view" cache-view="false">
+	<ion-content>
+		<div class="overYeiii" resize></div>
+		<div class="yeiCont" resize>
+			<div class="yeiTit" botom-absolute-window="60">
+				¡YEIII! {{ windowHeight }}
+			</div>
+			<div class="yeiTxt proximanova-alt" botom-absolute-window="32">
+				Después de este Quiz puedes <br>comprar el
+				producto escogiendo el <br>método de pago que
+				prefieras. Para <br>obtenerlo, ve al establecimiento <br>
+				indicado, o escoge que te lo <br>enviemos a casa.
+			</div>
+			<div class="yeiNext" ng-click="irPreguntas(dato.id, dato.tipo, dato.informacion.preguntas, dato.informacion.nombre)"><!--app.yagansmarcasa-->
+				CONTINUAR <span class="icon-arrow-right"></span>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card13" style="background-image: url({{dato.rootImg + 'img' + dato.informacion.imagenes[0].imagen}});">
+				<div class="iconsCard11">
+					<a href="#"><span class="icon-info iconR"></span></a>
+				</div>
+				<div class="horario">
+				</div>
+				<div class="shoppingIcon2">
+					<img src="img/shoppingCartIcon3.png" alt="">
+				</div>
+				<div id="productName2">
+					<div class="sep2"></div>
+					<div class="productName">{{dato.informacion.nombre}}</div>
+				</div>
+				<div class="productStatus2">
+					<div class="antes">
+						<span class="destBig">${{dato.informacion.precio_antes}}</span>
+						<span>ANTES</span>
+					</div>
+					<div class="descuento">
+						<span>{{dato.descuento}}%</span>
+					</div>
+					<div class="ahora">
+						<span class="destBig">${{dato.informacion.precio_ahora}}</span>
+						<span>AHORA</span>
+					</div>
+				</div>
+				<div class="moreDetails">
+					<div class="moreDetailsInt">
+						<span>DESLIZA PARA VER MAS DETALLES </span>
+						<div class="turn2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

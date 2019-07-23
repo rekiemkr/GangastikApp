@@ -1,0 +1,37 @@
+<ion-view view-title="variablecuatro-view" cache-view="false">
+	<div id="wrapper" class="main3">
+		<div class="card16 relativecard" altura-porcentaje="90">
+			<div class="si-beneficio w100" ng-if="benef.beneficio != ''">
+				<div class="cont-beneficio scrollY">
+					<p class="beneficioTit yellow">¡BENEFICIO DE JUEGO!</p>
+					<div class="bars" style="top: 4px;"><span class="bar" style="border-bottom: 0px solid #fff;height: 0;width: 40%;"></span></div>
+					<p class="beneficioSubTit">{{benef.beneficio.nombre}}</p>
+					<div class="imgaenBeneficio" style="background-image: url({{benef.rootImg + 'img' + benef.beneficio.imagen}});"></div>
+					<p class="tappsiTxt">
+						{{benef.beneficio.texto}}
+					</p>
+					<p class="tappsiCosto">COSTO</p>
+					<p class="tappsiGangs yellow">{{benef.beneficio.gangs}} GANGS</p>
+				</div>
+				<div class="tappsiOpt">
+					<span class="tappsiUsar" ng-click="usarGansBeneficio(benef.id_producto, benef.categoria, benef.tipo, benef.beneficio.id, benef.beneficio.gangs, benef.beneficio.cantidad, benef.beneficio.codigo, benef.beneficio.nombre)">USAR GANGS</span>
+					<span class="tappsiNo" ui-sref="app.producto">NO, GRACIAS</span>
+				</div>
+			</div>
+			<div class="no-beneficio w100 flex-center" ng-if="benef.beneficio == ''" altura-porcentaje="90">
+				<div style="margin: 0 auto;">
+					<center><img ng-src="img/alerta.png" /></center>
+					<div id="productName topcalif">
+						<div class="noproductos">
+							<h3>Upps!</h3>
+							No hay beneficio disponible.
+						</div>
+					</div>
+				</div>
+				<div class="tappsiOpt flex-center-horizontal">
+					<span class="tappsiNo" ui-sref="app.producto">VER PRODUCTOS</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-view>

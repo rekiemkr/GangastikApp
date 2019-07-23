@@ -1,0 +1,25 @@
+<ion-view view-title="productocolocar-view" cache-view="false">
+	<td-cards ng-if="disponible">
+		<td-card ng-repeat="card in cards" on-transition-left="transitionLeft(card)" on-transition-right="transitionRight(card)" on-transition-out="transitionOut(card)" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}" altura-porcentaje="85" centhorizontal-sinw data-id="card.id">
+			<ion-producto-card id="{{card.id}}" tipo="{{card.tipo}}" categoria="{{card.categoria}}" date="{{card.fecha}}" 
+				marca="{{card.marca}}" posicion="{{card.distancia}}"></ion-producto-card>
+		</td-card>
+	</td-cards>
+	<div class="sep10" ng-if="!disponible"></div>
+	<div class="content6" ng-if="!disponible" ng-style="noDisponible">
+		<div class="card14" altura-porcentaje="85">
+			<div class="image row row-center" ng-controller="CardCtrl" style="height: 100%;">
+				<div style="margin: 0 auto;">
+					<center><img ng-src="img/alerta.png" /></center>
+					<div id="productName topcalif">
+						<div class="noproductos">
+							<h3>Upps!</h3>
+							Es posible que por tu perfil y ubicación no tengamos productos para ti ahora… <br> 
+							¡Pero tu tranqui que si nos escribes contándonos, tal vez podamos buscar productos para ti!
+						</div>
+					</div>
+				</div>
+			</div><!--producto-->
+		</div>
+	</div>
+</ion-view>

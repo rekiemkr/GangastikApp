@@ -1,0 +1,8 @@
+<ion-view view-title="productobusqueda-view" cache-view="false">
+	<td-cards ng-if="disponible">
+		<td-card ng-repeat="card in cards" on-transition-left="transitionLeft(card)" on-transition-right="transitionRight(card)" on-transition-out="transitionOut(card)" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}" altura-porcentaje="85" centhorizontal-sinw data-id="card.id">
+			<ion-producto-card id="{{card.id}}" tipo="{{card.tipo}}" categoria="{{card.categoria}}" date="{{card.fecha}}" 
+				marca="{{card.marca}}" posicion="{{card.distancia}}"></ion-producto-card>
+		</td-card>
+	</td-cards>
+</ion-view>

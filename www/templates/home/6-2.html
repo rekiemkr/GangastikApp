@@ -1,0 +1,82 @@
+<ion-view view-title="canastika-view" cache-view="false">
+	<div class="content4">
+		<div class="card2 card2Hidden" altura-porcentaje="85">
+			<div class="cardTabs">
+				<div class="cerrarG" ui-sref="app.producto">
+					<span class="icon-close closeCenter"></span>
+				</div>
+				<div class="arrowBack2" ui-sref="app.producto">
+					<span class="icon-arrow-left"></span>
+				</div>
+				<div class="center miCanastika bold proximanova-alt">
+					MI CAN<span class="highLetter">Á</span>STIKA
+				</div>
+			</div>
+			<div class="cardItems3 FlexRow">
+				<div class="tabfls">
+					<div class="tab1" ng-click="seran()" ng-class="tbacl1"><span style="color: #000;">ACTIVOS</span></div>
+					<div class="tab2" ng-click="fueron()" ng-class="tbacl2"><span style="color: #000;">HISTORIAL</span></div>
+				</div>
+				<div class="innerwrap1" ng-style="iner1" altura-porcentaje="60">
+					<div class="innerItem2" ng-repeat="sera in seranB">
+						<div class="infoK" ng-click="dondeComprar(sera.id, sera.can_id, sera.tipo, sera.codigo, sera.secreto)">
+							<span class="icon-info"></span>
+						</div>
+						<div class="vencido" ng-if="sera.restantes == 0">
+							<p class="vencidoTxt">
+								Producto no disponible <br>
+								<span class="vencidoTxt2">{{sera.texto_vencido}}</span><!--VENCIDO-->
+							</p>
+						</div>
+						<div class="itemImage2 row row-center row-no-padding">
+							<figure>
+								<img src="{{sera.root + 'img' + sera.imagen}}" alt="{{sera.nombre}}" />
+							</figure>
+						</div>
+						<div class="itemDescription2">
+							<p class="title2">SUMA <strong style="font-family: 'ProximaNova';">{{sera.gangsP}} GANGS</strong></p>
+							<p class="subtitle2">SI COMPRAS EL PRODUCTO</p>
+							<div class="sep"></div>
+							<div class="precio-texto" ng-if="sera.informacion_restante.tipo_pago == 'texto'">
+								<div>{{sera.informacion_restante.texto_pago}}</div>
+								<div class="subDescto2">{{sera.nombre}}</div>
+							</div>
+							<div class="precio-numero" ng-if="sera.informacion_restante.tipo_pago == 'precio'">
+								<div class="descto">-{{sera.descuento}}%</div>
+								<div class="subDescto"><span class="ahora">AHORA</span>$ {{sera.actual}}</div>
+								<div class="subDescto2">{{sera.nombre}}</div>
+							</div>
+							<div class="sep"></div>
+							<div class="time">
+								<count-down date="{{sera.vencimiento}}"></count-down>
+								<!--span class="hours">24</span>
+								<span class="minBag"></span>
+								<span class="minutes">45</span>
+								<span class="seconds">01</span-->
+							</div>
+							<button class="btnRedimir" ng-click="redimirProducto(sera.id, sera.can_id, sera.tipo, sera.codigo, sera.secreto)" ng-style="btnredimir">OBTÉN TU GANGA</button>
+							<span class="donde" ng-click="dondeComprar(sera.id, sera.can_id, sera.tipo, sera.codigo, sera.secreto)" style="text-decoration: underline;">¿Dónde comprar?</span>
+						</div>
+					</div>
+				</div>
+				<div class="innerwrap2" ng-style="iner2" altura-porcentaje="60">
+					<div class="innerItem2" ng-repeat="fuero in fueronB">
+						<div class="itemImage2 row row-center row-no-padding">
+							<figure>
+								<img src="{{fuero.root + 'img' + fuero.imagen}}" alt="{{fuero.nombre}}" />
+							</figure>
+						</div>
+						<div class="itemDescription2">
+							<p class="done yellow" style="font-weight: bold;">GANGA <br>COMPRADA</p>
+							<button id="cambio2-btnRedimir" class="btnRedimir" ng-click="calificar(fuero.id, fuero.can_id,fuero.tipo,fuero.codigo,fuero.secreto)" ng-style="btnredimir">CALIFICA TU PRODUCTO</button>
+						</div>
+					</div>
+				</div>
+				<div class="dest2" ui-sref="app.producto">
+					VER MAS PRODUCTOS 
+					<span class="icon-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-view>

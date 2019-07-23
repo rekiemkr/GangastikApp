@@ -1,0 +1,49 @@
+<ion-view view-title="cedula-view">
+	<ion-content>
+		<div class="alto50"></div>
+		<div class="vent" ng-click="cerraInfo()" ng-style="info">
+			<div class="overYeiii"></div>
+			<div class="yeiCont row row-center row-no-padding" style="margin-top: 30px">
+				<div class="cerrrG">
+					<span class="icon-close close2"></span>
+				</div>
+				<div class="yeiTxt8">
+					<p class="cedulaTxt2">
+						GANGASTIK es un espacio
+						en el que diferentes empresas de Colombia buscan obsequiar beneficios a sus clientes
+						con el fin de mantenerlos felices. Como eres cliente
+						de muchas de ellas, necesitan
+						tu número de cédula para poder encontrarte en esta aventura
+						y brindarte muchos beneficios.
+						<br> <br>
+						<b>¡VIVE AL AVENTURA!</b>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="row row-center main2 row-no-padding">
+			<div class="logo2">
+				<img src="img/logo-s.png" alt="">
+			</div>
+			<div class="content4 flexCol vMid hRig">
+				<p class="note2 marBot">TU CÉDULA</p>
+				<form name="cver" id="cedula">
+					<div class="labelFormCenter">
+						<span class="icon-card iconFormCenter2"></span>
+						<span class="icon-question iconFormRight"></span>
+						<span class="icon-question iconFormRight" ng-click="abrirInfo()"></span>
+     				<input type="tel" placeholder="Tu Cédula" class="cedula" ng-model="ccc" />
+					</div>
+					<div class="sep"></div>
+				</form>
+				<p class="texto-cedula" id="fuente-proximanova-alt">
+					Inscribe tu Cédula para que <br>nuestras empresas auspiciantes, <br>de las que eres cliente, te <br>encuentren y te llenen <br>de beneficios.
+				</p>
+				<div class="btnsFoot">
+					<button class='btn3' ng-click="cedulaPatrocinadores()" style="border-radius: 10px;left:0;">ENVIAR</button>
+					<button class='btn2 lg cambioBTN5' ui-sref="app.home" ng-style="correoStyle">OMITIR</button>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

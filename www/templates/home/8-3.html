@@ -1,0 +1,27 @@
+<ion-view view-title="yaganmarcasb-view">
+	<ion-content>
+		<div class="back-white w100">
+			<div class="head">
+				<img src="img/logo.png" alt="">
+			</div>
+			<div id="for1" class="content2 flexCol secCora">
+				<div class="navi">
+					<img src="img/navi3.jpg" alt="">
+				</div>
+				<div>
+					<div class="coraTitle vhCen">
+						Marcas que sueles comparar:
+					</div>
+					<div class="itemMarcas" ng-repeat="mark in marcasS.items" ng-class="{'overlay': marcasS.selected == mark}" ng-click="marcasS.selected = mark" data-id="{{mark.id}}">
+						<img src="img/{{mark.img}}" alt="" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot">
+			<button class='btn' ui-sref="app.yagansgangasg">
+				SIGUIENTE
+			</button>
+		</div>
+	</ion-content>
+</ion-view>

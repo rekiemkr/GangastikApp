@@ -1,0 +1,34 @@
+<ion-view view-title="variablecinco-view" cache-view="false">
+	<ion-content>
+		<div id="wrapper" class="main4">
+			<div class="sep10"></div>
+			<div class="card17" altura-porcentaje="85">
+				<div class="closeDiv" ng-click="enviarProducto()">
+					<span class="icon-close close4"></span>
+				</div>
+				<p class="gangatikoTit">¡GANGÁSTIKO!</p>
+				<div class="gangas-beneficio" top-absolute-div="8">
+					<div class="logoSmall"><img src="img/logo-s.png"></div>
+					<p class="gangastikoCosto">TE QUEDAN</p>
+					<p class="gangastikoGangs yellow">{{resta}} GANGS</p>
+				</div>
+				<div class="elSecreto secreto-relative" top-absolute-div="10">
+					<div class="secretoBox">
+						<p class="secretoTit">EL SECRETO</p>
+						<p class="secretoTxt">{{beneficioG.codigo}}</p>
+					</div>
+				</div>
+				<p class="secretoSubTxt texto-beneficio" top-absolute-div="18">
+					Ingresa tu Cod. promocional <br>
+					en <b>{{beneficio.nombre}}</b> al momento <br>
+					de solicitar tu servicio para <br> 
+					redimir tu beneficio.
+				</p>
+				<div class="dest4 cambio-dest4" ng-click="enviarProducto()">
+					VER MAS PRODUCTOS 
+					<span class="icon-arrow-right"></span>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

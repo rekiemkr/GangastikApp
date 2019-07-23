@@ -1,0 +1,50 @@
+<ion-side-menus enable-menu-with-back-views="false" cache-view="false">
+	<ion-side-menu-content>
+		<div class="row row-center row-no-padding main1">
+			<div class="cj3">
+				<div class="top flexCol menu-header" ng-style="headerIos">
+					<div id="header" class="flexRow">
+						<div class="menuT" ng-click="toggleLeft()"><img src="img/menu.png" alt=""></span></div>
+						<div class="search" ng-click="abrirBuscador()"><div class="bus"><span class="icon-search"></span></div></div>
+						<div class="title flex-center"><span>{{tituloGeneral}}</span></div>
+						<div class="cart" ui-sref="app.canastika" style="position: relative;right: -10px;width: 18%;"><span class="icon-shopping"></span></div>
+					</div>
+				</div>
+				<ion-nav-view name="menuContent">
+  			</ion-nav-view>
+			</div>
+		</div>
+	</ion-side-menu-content>
+	<ion-side-menu side="left" class="menuAndorid42 row row-center row-no-padding">
+		<div id="cj1" class="cj1">
+			<div class="iconSideMenu" menu-close ui-sref="app.home">
+				<span class="icon-home"></span>
+				<p>HOME</p>
+			</div>
+			<div class="iconSideMenu" menu-close ui-sref="app.perfil">
+				<span class="icon-user"></span>
+				<p>MI PERFIL</p>
+			</div>
+			<div class="iconSideMenu" menu-close ng-click="suscriptoPetrocinio()">
+				<span class="icon-hands"></span>
+				<p>TUS <br>PATROCINADORES </p>
+			</div>
+			<div class="iconSideMenu" menu-close ui-sref="app.terminos">
+				<span class="icon-writte"></span>
+				<p>TÉRMINOS</p>
+			</div>
+			<div class="iconSideMenu" menu-close ui-sref="app.inviteamigo">
+				<span class="icon-user-plus"></span>
+				<p>INVITA <br> A UN AMIGO</p>
+			</div>
+			<div class="iconSideMenu" menu-close ui-sref="app.contacto">
+				<span class="icon-mail"></span>
+				<p>CONTACTO</p>
+			</div>
+			<div class="iconSideMenu" menu-close ng-click="cerrarSesion()">
+				<span class="icon-power"></span>
+				<p>CERRRAR</p>
+			</div>
+		</div>
+	</ion-side-menu>
+</ion-side-menus>

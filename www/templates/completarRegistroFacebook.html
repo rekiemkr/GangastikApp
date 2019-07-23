@@ -1,0 +1,40 @@
+<ion-view view-title="completarRegistroFacebook" cache-view="false">
+	<ion-content>
+		<div class="row hMid main2 row-center">
+			<div class="cja anch1">
+				<div class="logo2"><img src="img/logo-s.png" alt="logo"></div>
+				<div class="content scrollY alto400">
+					<div class="form">
+						<form ng-submit="registroFacebook()">
+							<div class="labelForm">
+								<span class="icon-user-plus iconForm" ng-style="stynombre"></span>
+								<input type="text" id="nombre" placeholder="Tu Nombre" ng-model="nombre" ng-focus="expression" disabled>
+							</div>
+							<div class="labelForm">
+								<span class="icon-user-plus iconForm" ng-style="styapellido"></span>
+								<input type="text" id="apellido" placeholder="Tu apellido" ng-model="apellido" ng-focus="apellido" disabled>
+							</div>
+							<div class="labelForm">
+								<span class="icon-mail iconForm" ng-style="styemail"></span>
+								<input type="email" id="email" placeholder="Tu correo" ng-model="email" disabled>
+							</div>
+							<div class="labelForm">
+								<span class="icon-calendar iconForm" ng-style="styfecha"></span>
+								<input type="text" id="fecha" placeholder="Fecha de nacimiento" ng-model="fecha" ng-style="styfecha" ng-click="openDatePicker()">
+							</div>
+							<div class="labelForm">
+								<span class="icon-mark iconForm" ng-style="styciudad"></span>
+								<select id="ciudad" ng-model="ciudad" ng-click="buscarCiudadReg()">
+									<option value="">Ciudad de residencia</option>
+									<option ng-repeat="item in ciudades" value="{{item.id}}">{{item.nombre}}</option>
+								</select>
+							</div>
+							<div id="texto"></div>
+							<button class='btn lg'>SIGUIENTE</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,41 @@
+<ion-view view-title="compartirp-view" cache-view="false">
+	<div class="content6">
+		<div class="card14 row row-center row-no-padding" altura-porcentaje="85">
+			<div class="image" ng-controller="CardCtrl">
+				<div class="opacidadCompartir"></div>
+				<div class="figureCalif" botom-absolute-window="15">
+					<img ng-src="{{dato.rootImg + 'img' +dato.informacion.imagenes[0].imagen}}" />
+					<div id="productName topcalif">
+						<div class="productName">{{dato.informacion.nombre}}</div>
+					</div>
+				</div>
+			</div><!--producto-->
+			<div id="retos" altura-porcentaje-div="90">
+				<div id="" class="row retoCard altoCien row-center">
+					<div class="cerrarG" ng-click="buscarProducto(dato)">
+						<span class="icon-close closeCenter"></span>
+					</div>
+					<div class="cajacien" style="width: 100%;">
+						<div class="retTit2">COMPARTIR</div>
+						<div class="perfil perfilBtn" ng-click="compartirFacebook(dato.id,dato.informacion,dato.tipo)">
+							<button class="btnCompartir">
+								<span class="icon-facebook"></span>  COMPARTIR EN FACEBOOK
+							</button>
+						</div>
+						<div class="perfil perfilBtn" ng-click="compartirNavegador(dato.informacion.nombre, dato.informacion, 'https://www.gangastik.com')">
+							<button class="btnCompartir" "><!--ng-click="shareAnywhere(informacion.nombre, dato.informacion, 'https://www.gangastik.com')"-->
+								<span class="icon-twitter"></span> 
+								COMPARTIR EN TWITTER
+							</button>
+						</div>
+						<div class="tit2">GANA 500 GANGS</div>
+						<div class="sep20"></div>
+					</div>
+				</div>
+			</div>
+			<div class="dest5" ui-sref="app.producto">
+				VER TODOS LOS PRODUCTOS <span class="icon-arrow-right"></span>
+			</div>
+		</div>
+	</div>
+</ion-view>

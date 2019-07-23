@@ -1,0 +1,26 @@
+<ion-view view-title="invitaramigo" cache-view="false">
+	<div class="row main2 row-center">
+		<div class="alto50"></div>
+		<div class="cj1 anch1">
+			<div class="logo2"><img src="img/logo-s.png" alt=""></div>
+			<div class="content">
+				<h4 class="fflite">TUS AMIGOS</h4>
+				<form class="m10" ng-submit="agregarAmigo()">
+					<div class="labelFormCenter" ng-style="correoStyle">
+						<span class="icon-mail iconFormCenter" style="left: 6px;"></span>
+						<input type="text" placeholder="Escribir el mail de tu amigo" class="center noBorder" id="censinbord" ng-model="amigoInvBB" style="padding-right:10px;" />
+					</div>
+					<div class="sep" ng-style="correoStyle"></div>
+					<p class="marBot"></p>
+					<div class="amigo-otro" ng-style="otroAmigo">
+						<span class="icon-user-plus-circled center" ng-click="agregarOtro()" ng-class="activado"></span>
+						<p>¿Tienes otro amigo?</p>
+					</div>
+					<p class="center gold cursor-pointer amigo-otro" ui-sref="app.home" ng-style="otroAmigo">NO, GRACIAS ></p>
+					<button class='btn lg' ng-style="correoStyle">{{texto}}</button>
+				</form>
+				<button class='btn2 lg cambioBTN3' ui-sref="app.home" ng-style="correoStyle">OMITIR</button>
+			</div>
+		</div>
+	</div>
+</ion-view>

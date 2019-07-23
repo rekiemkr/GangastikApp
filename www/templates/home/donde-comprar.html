@@ -1,0 +1,120 @@
+<ion-view view-title="dondecomprar-view" cache-view="false">
+		<div class="overYeiii" resize></div>
+		<div class="yeiCont" resize>
+			<div class="descripcion" ng-class="descrip">
+				<div class="textocoments">
+					<div class="cerrarG" ui-sref="app.canastika">
+						<span class="icon-close closeCenter"></span>
+					</div>
+					<div class="textoC" ng-style="texto">
+						<div style="height: 200px;"></div>
+						<div class="condiciones">
+							<span class="infoP" ng-click="clickInfoP()">
+								INFO. <br>DEL PRODUCTO	
+							</span>
+							<span class="infoP" ng-click="clickInfoO()">
+								CONDICIONES<br>DE LA OFERTA	
+							</span>
+							<span class="infoP" ng-click="clickInfoC()">
+								¿DÓNDE <br>COMPRAR?	
+							</span>
+						</div>
+						<div class="steps">
+							<div class="imgteps">
+								<div class="linea"></div>
+								<div class="puntos" ng-style="puntosInfo">
+									<div class="circle" ng-click="clickInfoP()" ng-class="circP1" circle-imagen>
+										<div></div>
+									</div>
+									<div class="circle" ng-click="clickInfoO()" ng-class="circP2" circle-imagen>
+										<div></div>
+									</div>
+									<div class="circle" ng-click="clickInfoC()" ng-class="circP3" circle-imagen>
+										<div></div>
+									</div>
+								</div>
+							</div>
+							<!--img src="img/productsBar.png" alt=""-->
+						</div>
+						<div class="sep2"></div>
+						<div class="productName2">{{dato.informacion.nombre}}</div>
+						<div class="subItem">
+							<span class="subit1">
+								<span class="icon-badge"></span>
+								ACCESORIOS
+							</span>
+							<span class="subit2">
+								<div class="starsR">
+									<span class="icon-star {{estrella.calif}}" ng-repeat="estrella in califComent.num_estrellas"></span>
+								</div>
+								<div>{{dato.cantidad_comentarios}} USUARIOS</div>
+								<span ng-click="abrirComents()" class="coment">Ver comentarios</span>
+							</span>
+						</div>
+						<div class="cajocults txtGangs7 width90" ng-style="infoproducto">
+							<p dato-html="dato.informacion.texto"></p>
+						</div>
+						<div class="cajocults txtGangs7 width90" ng-style="oferta">
+							<p>
+								{{dato.informacion.condiciones}}
+							</p>
+						</div>
+						<div class="txtGangs7 width90" ng-style="infocomprar">
+							<div class="estableci" ng-repeat="estable in dato.informacion.establecimientos">
+								<figure>
+									<img src="{{dato.rootImg + estable.imagen}}" alt="{{estable.nombre}}" />
+								</figure>
+								<figcaption>
+									<b>Dirección: </b>{{estable.direccion}}<br />
+									<b>Teléfono: </b>{{estable.telefono}}
+								</figcaption>
+							</div>
+						</div>
+					</div>
+					<div class="comenC" ng-style="coment">
+						<div class="iconsdato10" ng-click="regInfo()">
+							<div class="circle-left flex-center">
+								<div class="icono">
+									<span class="icon-arrow-left"></span>
+								</div>
+							</div>
+						</div>
+						<div class="descrip2">
+							<p><b>COMENTARIOS</b></p>
+						</div>
+						<div class="sep3"></div>
+						<div class="productName2">{{dato.informacion.nombre}}</div>
+						<div class="stars">
+							<span class="icon-star {{estrella.calif}}" ng-repeat="estrella in califComent.num_estrellas"></span>
+						</div>
+						<div class="users">{{dato.cantidad_comentarios}} USUARIOS</div>
+						<div class="txtGangs71 width90">
+							<ul>
+								<li ng-repeat="comentario in dato.informacion.comentarios">{{comentario.texto}}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div><!--descripcion-->
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card14" altura-porcentaje="85">
+				<div class="image" ng-controller="CardCtrl">
+					<div class="iconsCard10" ng-style="icondis">
+						<span ng-click="abrirDescripcion()" href="#"><span class="icon-info">	</span></span>
+						<span ui-sref="app.compartirp"><span class="icon-in"></span></span>
+					</div>
+					<div class="productLogo">
+						<img ng-src="{{dato.rootImg + dato.informacion.logo}}" />
+					</div>
+					<div class="figureCalif" botom-absolute-window="15">
+						<img ng-src="{{dato.rootImg + 'img' +dato.informacion.imagenes[0].imagen}}" />
+						<div id="productName topcalif">
+							<div class="productName">{{dato.informacion.nombre}}</div>
+						</div>
+					</div>
+				</div><!--producto-->
+			</div>
+		</div>
+</ion-view>

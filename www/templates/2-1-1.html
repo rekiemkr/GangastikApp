@@ -1,0 +1,27 @@
+<ion-view view-title="recordar" cache-view="false">
+	<ion-content>
+		<div class="atras-home" ui-sref="dos">
+		<span class="icon-arrow-left"></span>
+	</div>
+		<div class="row row-center" resize>
+			<div class="cja" style="width: 100%;">
+				<div class="alto100"></div>
+				<div class="logo2"><img src="img/logo-s.png" alt=""></div>
+				<div class="content" id="content3">
+					<h4 class="camb1N">RECUPERA TU CONTRASEÑA</h4>
+					<div class="form">
+						<form ng-submit="recordar()" class="formCamb1">
+							<div class="labelForm">
+								<span class="icon-mail iconForm"></span>
+								<input type="text" id="email" placeholder="Tu correo" name="correo" ng-model="correo" />
+							</div>
+							<div class="textog"></div>
+							<span class="prompt">Enviar instrucciones al correo</span>
+							<button class='btn lg'>ENVIAR</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

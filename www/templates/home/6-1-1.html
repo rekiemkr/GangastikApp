@@ -1,0 +1,33 @@
+<ion-view view-title="perfil-view" cache-view="false">
+	<div class="row row-center row-no-padding">
+		<div class="perfilcj">
+			<div class="arrowBack" ui-sref="app.producto">
+				<span class="icon-arrow-left"></span>
+			</div>
+			<div class="avatar">
+				<div class="bigIcon"></div>
+			</div>
+			<div class="perfilContent" altura-porcentaje="60">
+				<div class="perfil perfilName">
+					<span class="break" style="text-transform:uppercase;">{{dato.nombre}} {{dato.apellido}}</span>
+					<span class="subPerfil"><span class="icon-mark"></span>{{dato.nombre_ciudad}}, COL</span>
+				</div>
+				<div class="perfil">
+					<span class="break">{{dato.email}}</span>
+					<span class="subPerfil">EMAIL</span>
+				</div>
+				<div class="perfil">
+					<span class="break">{{dato.cc}}</span>
+					<span class="subPerfil">CÉDULA</span>
+				</div>
+				<div class="perfil">
+					<span class="break">{{dato.nacimiento}}</span>
+					<span class="subPerfil">FECHA NACIMIENTO</span>
+				</div>
+				<div class="perfil perfilBtn" ui-sref="app.perfiledit">
+					<button class="btnEditarPerfil">EDITAR PERFIL</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-view>

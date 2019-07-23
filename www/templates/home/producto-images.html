@@ -1,0 +1,65 @@
+<ion-view view-title="productoimagen-view" cache-view="false">
+	<div class="card-info-producto figure-cien scrollY" altura-porcentaje="90">
+		<div class="image">
+			<div class="sepa" ng-class="divSepa"></div>
+			<div class="iconsCard10 flexB" ng-style="icondis">
+				<span ng-click="verInformacion(cardB.id, cardB.tipo)"><span class="icon-close closeCenter" style="right: -10px;line-height:26px;"></span></span>
+				<span ng-click="compartir(cardB.id, cardB.tipo)"><span class="icon-in"></span></span>
+			</div>
+			<div class="horario">
+				<div class="timeBig" data-fecha="{{cardB.informacion.vencimiento}}">
+					<count-down date="{{cardB.informacion.vencimiento}}"></count-down>
+				</div>
+			</div>
+			<div class="flechas">
+				<div class="flech left" botom-absolute-window="35" ng-click="previous()"><span class="icon-arrow-left"></span></div>
+				<div class="flech rigth" botom-absolute-window="35" ng-click="next()"><span class="icon-arrow-right"></span></div>
+			</div>
+			<div class="productLogo" ng-if="cardB.tipo == 'Patrocinado'">
+				<img ng-src="{{cardB.rootImg + cardB.informacion.logo}}" />
+			</div>
+			<ion-slide-box does-continue="true" slide-interval="1000" show-pager="false" on-slide-changed="onSlideChanged(index)">
+				<ion-slide ng-repeat="image in cardB.informacion.imagenes">
+					<div>
+						<preload-imagen class="image-slide-preload" img-src="{{cardB.rootImg + 'img' + image.imagen}}" spinner-class="background-spinner"></preload-imagen>
+					</div>
+				</ion-slide>
+			</ion-slide-box>
+			<div>
+				<div class="loading-imagenP">
+					<figure>
+						<img src="img/loading.gif" alt="loading" />
+					</figure>
+				</div>
+				<!--div class="shoppingIcon figure" ng-class="divAnimar">
+					<div id="carrito1" class="figureCar kanasanimar" ng-style="icondis" ng-click="agregarCanastika(cardB.id, cardB.tipo, cardB.informacion.nombre, cardB.informacion.preguntas, cardB.informacion.restantes)" click-animar="done()" ng-class="diviconoCar">
+						<img src="img/shoppingCartIcon.png" alt="carrito" />
+					</div>
+				</div-->
+				<div id="relative" class="productNameDiv" botom-absolute-window="8">
+					<div class="productName">{{cardB.informacion.nombre}}</div>
+				</div>
+			</div>
+			<div class="figcaption productStatus2" botom-absolute-div="0" ng-click="abrirDescripcion()">
+				<div class="textoPrecio" ng-if="cardB.informacion.tipo_pago == 'texto'"><span>{{cardB.informacion.texto_pago}}</span></div>
+				<div class="antes" ng-if="cardB.informacion.tipo_pago == 'precio'">
+					<span class="destBig">${{cardB.informacion.precio_antes}}</span>
+					<span>ANTES</span>
+				</div>
+				<div class="descuento" ng-if="cardB.informacion.tipo_pago == 'precio'">
+					<span>-{{cardB.descuento}}%</span>
+				</div>
+				<div class="ahora" ng-if="cardB.informacion.tipo_pago == 'precio'">
+					<span class="destBig">${{cardB.informacion.precio_ahora}}</span>
+					<span>AHORA</span>
+				</div>
+			</div>
+			<!--div class="moreDetails" botom-absolute-div="0">
+				<div class="moreDetailsInt">
+					<span>DESLIZA PARA VER MAS DETALLES </span>
+					<div class="turn2"></div>
+				</div>
+			</div-->
+		</div><!--producto-->
+	</div>
+</ion-view>

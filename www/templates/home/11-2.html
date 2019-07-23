@@ -1,0 +1,101 @@
+<ion-view view-title="yaganrecibicasa-view" cache-view="false">
+		<div class="overYeiii"></div>
+		<div class="yeiCont">
+			<div id="top1" class="yeiTit4">
+				HAREMOS LLEGAR
+				TU <span style="color:#fdbe2c;text-transform: uppercase;">{{dato.informacion.nombre}}</span> A:
+			</div>
+			<div class="envioForm">
+				<form ng-submit="recibircasa()">
+					<div class="labelForm">
+						<span class="iconPng iconForm">
+							<img src="img/llegarIcons_01.png" alt="">
+						</span>
+						<input type="text" placeholder="Dirección de entrega" ng-model="direccion" ng-style="a" />
+					</div>
+					<div class="labelForm">
+						<span class="iconPng iconForm">
+							<img src="img/llegarIcons_02.png" alt="">
+						</span>
+						<input type="text" placeholder="Torre / Apto / Casa" ng-model="tipocasa" ng-style="b" />
+					</div>
+					<div class="labelForm">
+						<span class="iconPng iconForm">
+							<img src="img/llegarIcons_03.png" alt="">
+						</span>
+						<div id="ciudad" class="selectForm" modal-select="" ng-model="ciudad" options="ciudades" modal-title="Ciudad de residencia">
+							{{ciudad.nombre || &apos;Ciudad de residencia&apos;}}
+							<div class="option">
+								<span style="color: #000;">{{option.nombre}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="labelForm">
+						<span class="iconPng iconForm">
+							<img src="img/llegarIcons_04.png" alt="">
+						</span>
+						<input type="text" placeholder="Barrio" ng-model="barrio" ng-style="d" >
+					</div>
+					<div class="labelForm">
+						<span class="iconPng iconForm">
+							<img src="img/llegarIcons_05.png" alt="">
+						</span>
+						<input type="text" placeholder="Teléfono de Contacto" ng-model="telefono" ng-style="e" />
+					</div>
+					<div class="labelForm">
+						<span class="iconPng iconForm">
+							<img src="img/llegarIcons_05.png" alt="">
+						</span>
+						<div class="selectForm" modal-select="" ng-model="formapago" options="selectionPago" modal-title="Tipo de pago">
+							{{formapago.nombre || &apos;Seleccione tipo de pago&apos;}}
+							<div class="option">
+								<span style="color: #000;">{{option.nombre}}</span>
+							</div>
+						</div>
+					</div>
+					<span class="smallTxt" ui-sref="app.condiciones">Condiciones de envío</span>
+					<div class="btnsFoot envioBtn">
+						<button class='btn2'>SOLICITAR ENVÍO </button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card14" style="background-image: url({{dato.rootImg + 'img' + dato.informacion.imagenes[0].imagen}});" altura-porcentaje="67">
+				<div class="iconsCard10">
+					<a href="#"><span class="icon-info iconR"></span></a>
+				</div>
+				<div class="enun">
+					SUMA <b>{{dato.gangsP}} GANGS</b><br>
+					SI COMPRAS EL PRODUCTO
+				</div>
+				<div class="horario2">
+					<div class="timeBig2">
+					</div>
+				</div>
+				<div id="productName2">
+					<div class="sep2"></div>
+					<div class="productName">{{dato.informacion.nombre}}</div>
+				</div>
+				<div class="productStatus2">
+					<div class="antes">
+						<span class="destBig">${{dato.informacion.precio_antes}}</span>
+						<span>ANTES</span>
+					</div>
+					<div class="descuento">
+						<span>{{dato.descuento}}%</span>
+					</div>
+					<div class="ahora">
+						<span class="destBig">${{dato.informacion.precio_ahora}}</span>
+						<span>AHORA</span>
+					</div>
+				</div>
+				<div class="moreDetails">
+					<div class="moreDetailsInt">
+						<span class="int2">REDIMIR PRODUCTO</span>
+					</div>
+				</div>
+			</div>
+		</div>
+</ion-view>

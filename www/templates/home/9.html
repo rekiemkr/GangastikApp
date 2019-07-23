@@ -1,0 +1,45 @@
+<ion-view view-title="yagansgangasg-view" cache-view="false">
+	<ion-content>
+		<div class="overYeiii" resize></div>
+		<div class="yeiCont" altura-porcentaje="90">
+			<div class="yeiTit2" botom-absolute-window="60">¡GANGÁSTICO!</div>
+			<div class="yeiTxt" botom-absolute-window="32">
+				Ganaste {{puntos}} GANGS <br>por responder nuestras preguntas.
+			</div>
+			<div class="yeiNext" ui-sref="app.canastika">
+				CONTINUAR <span class="icon-arrow-right"></span>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card13" style="background-image: url({{dato.rootImg + 'img' + dato.informacion.imagenes[0].imagen}});">
+				<div class="iconsCard11">
+					<a href="#"><span class="icon-info iconR"></span></a>
+				</div>
+				<div id="productName2">
+					<div class="sep2"></div>
+					<div class="productName">{{dato.informacion.nombre}}</div>
+				</div>
+				<div class="productStatus2">
+					<div class="antes">
+						<span class="destBig">${{dato.informacion.precio_antes}}</span>
+						<span>ANTES</span>
+					</div>
+					<div class="descuento">
+						<span>{{dato.descuento}}%</span>
+					</div>
+					<div class="ahora">
+						<span class="destBig">${{dato.informacion.precio_ahora}}</span>
+						<span>AHORA</span>
+					</div>
+				</div>
+				<div class="moreDetails">
+					<div class="moreDetailsInt">
+						<span>DESLIZA PARA VER MAS DETALLES </span>
+						<div class="turn2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

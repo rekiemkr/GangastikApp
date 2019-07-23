@@ -1,0 +1,29 @@
+<ion-view view-title="ingreso" cache-view="false">
+	<div class="atras-home" ui-sref="dos">
+		<span class="icon-arrow-left"></span>
+	</div>
+	<div class="row main2 flex-end">
+		<div class="cja anch1" resize>
+			<div class="alto120"></div>
+			<div class="logo2"><img src="img/logo-s.png" alt=""></div>
+			<div id="content3" class="content">
+				<h4 style="font-weight: normal;">INGRESA CON</h4>
+				<div class="form">
+					<form ng-submit="ingreso()">
+						<div class="labelForm">
+							<span class="icon-mail iconForm" ng-style="styemail"></span>
+							<input id="coring" type="email" placeholder="Tu correo" ng-model="coring" >
+						</div>
+						<div class="labelForm">
+							<span class="icon-lock-open iconForm" ng-style="stypassa"></span>
+							<input id="passing" type="password" placeholder="Contraseña" ng-model="passing" >
+						</div>
+						<span class="prompt" style="top: -20px;"><a href="#/recordar">¿Olvidaste tu contraseña?</a></span>
+						<div class="textog"></div>
+						<button class='btn lg'>INGRESAR</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-view>

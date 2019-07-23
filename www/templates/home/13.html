@@ -1,0 +1,33 @@
+<ion-view view-title="patrocinadores-view" cache-view="false">
+		<div delegate-handle="small" class="content5" style="margin: 0;padding: 0;">
+			<div id="patrocinadores" class="card2">
+				<div class="corner" ng-if="patrocinadores.existe" ui-sref="app.home">
+					<img src="img/arrow3.png" alt="">
+				</div>
+				<div class="cardItems4 flexCol relativePos" altura-porcentaje="90" ng-if="patrocinadores.existe">
+					<div class="innerBox scrollY">
+						<div class="innerItem4" ng-repeat="pat in patrocinadores.patrocinios">
+							<img src="{{patrocinadores.rootImg + 'img' + pat.imagen_patrocinador}}" alt="{{pat.razon_social}}" class="img-responsive" />
+							<span class="verProductos2" ng-click="abrirProductos(pat.id,pat.razon_social)">
+								VER PRODUCTOS 
+								<span class="icon-arrow-right"></span>
+							</span>
+						</div>
+					</div><!-- innerBox -->
+					<!--div class="dest5" ng-click="scrollTop()">
+						MAS PATROCINIOS 
+						<span class="icon-arrow-down"></span>
+					</div-->
+				</div><!-- cardItems4 -->
+			</div><!-- card2 -->
+			<div class="row row-center" ng-if="!patrocinadores.existe" altura-porcentaje="90">
+				<div ui-sref="app.home"><span class="icon-close close3"></span></div>
+				<div class="center">
+					<figure style="width: 40%;margin:0 auto 40px auto;">
+						<img src="img/alerta.png" style="width: 100%;" />
+					</figure>
+					<h2 style="text-align: center;margin: 0 auto; width: 80%;color:#fff;font-size: 19px;">Actualmente no tienes patrocinadores activos.</h2>
+				</div>
+			</div>
+		</div>
+</ion-view>

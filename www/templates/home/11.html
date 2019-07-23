@@ -1,0 +1,84 @@
+<ion-view view-title="yagankanastica-view" cache-view="false">
+	<ion-content>
+		<div class="overYeiii"></div>
+		<div class="yeiCont" resize>
+			<div class="yeiTxt">
+				YA TIENES TU <span class="boldY" style="text-transform: uppercase;">{{dato.informacion.nombre}} </span>EN TU <br>
+				<span class="boldY">CANÁSTIKA.</span><br>	
+			</div>
+			<div class="yeiTxt" id="yeiTxt2">
+				¿Cómo Obtener tu descuento <br>ó beneficio? 
+			</div>
+			<div class="yeiNext" ui-sref="app.yaganredimir" ng-style="continuarios">
+				CONTINUAR <span class="icon-arrow-right"></span>
+			</div>
+			<div id="cambio2-steps2" class="steps2">
+				<div class="step flexB flex-center-vertical">
+					<div class="stepNo">
+							<div class="tipBoxIconB">
+								<span class="icon-box tipBox"></span>
+								<span class="tipBoxNumberB"><span>1</span></span>
+							</div>
+					</div>
+					<div class="stepTxt">
+						Corre a uno de los <br>establecimientos que te <br>
+						indicamos en <span class="boldY" ng-click="dondeComprar()">“¿Dónde <br>comprar?”</span> el producto y <br>muéstrale al cajero el código <br>que te damos.
+					</div>
+				</div>
+				<div class="step flexB flex-center-vertical">
+					<div class="stepNo">
+							<div class="tipBoxIconB">
+								<span class="icon-box tipBox"></span>
+								<span class="tipBoxNumberB"><span>2</span></span>
+							</div>
+					</div>
+					<div class="stepTxt">
+						Si prefieres, puedes recibirlo <br>en casa. Ingresa
+						los datos de <br>envío y la forma de pago.
+					</div>
+				</div>
+			</div>
+			<div id="cambio2-yeiSubTit" class="yeiSubTit">
+				¡VIVE TU PROPIA AVENTURA GANGÁSTIKA!
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card14" style="background-image: url({{dato.rootImg + 'img' + dato.informacion.imagenes[0].imagen}});" altura-porcentaje="67">
+				<div class="iconsCard10">
+					<a href="#"><span class="icon-info iconR"></span></a>
+				</div>
+				<div class="enun">
+					SUMA <b>{{dato.gangsP}} GANGS</b><br>
+					SI COMPRAS EL PRODUCTO
+				</div>
+				<div class="horario2">
+					<div class="timeBig2">
+					</div>
+				</div>
+				<div id="productName2">
+					<div class="sep2"></div>
+					<div class="productName">{{dato.informacion.nombre}}</div>
+				</div>
+				<div class="productStatus2">
+					<div class="antes">
+						<span class="destBig">${{dato.informacion.precio_antes}}</span>
+						<span>ANTES</span>
+					</div>
+					<div class="descuento">
+						<span>{{dato.descuento}}%</span>
+					</div>
+					<div class="ahora">
+						<span class="destBig">${{dato.informacion.precio_ahora}}</span>
+						<span>AHORA</span>
+					</div>
+				</div>
+				<div class="moreDetails">
+					<div class="moreDetailsInt">
+						<span class="int2">REDIMIR PRODUCTO</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

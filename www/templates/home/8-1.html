@@ -1,0 +1,48 @@
+<ion-view view-title="yagansmarcasa-view" cache-view="false">
+		<div class="main-sinflex row-no-padding scrollY" altura-porcentaje="82.5">
+			<div class="cja w100">
+				<div class="head">
+					<img src="img/logo.png" alt="">
+				</div>
+				<div id="for1" class="content2 flexCol secCora">
+					<div class="navi divItems">
+						<div class="cajacirc">
+							<div class="lineaCir"></div>
+							<div class="circulos">
+								<div class="itemcirlce" ng-repeat="its in pregunta.divitems.preguntasO">
+									<div class="centercirlce" ng-class="{'selecionado': its.orden == pregunta.divitems.numSel}"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="coraTitle vhCen">
+							{{pregunta.pregunta.pregunta}}
+						</div>
+						<div id="for2">
+							<div class="resPreg" ng-if="pregunta.pregunta.tipo == 'texto'" ng-init="content = false">
+								<div class="coraSect vhCen" ng-repeat="res in pregunta.items" ng-class="{'classee1': pregunta.selected == res}" 
+									ng-click="pregunta.selected = res" data-selc="{{res.num}}" data-id="{{pregunta.pregunta.id}}" ng-if="pregunta.pregunta.tipo_seleccion == 'unica' && res.opcion != ''">{{res.opcion}}</div>
+								<div class="coraSect vhCen" ng-repeat="res in pregunta.items" ng-class="{'classee1': content}" 
+									ng-click="content == true ? content = false : content = true" data-selc="{{res.num}}" data-id="{{pregunta.pregunta.id}}" ng-if="pregunta.pregunta.tipo_seleccion == 'multiple' && res.opcion != ''">{{res.opcion}}</div>
+							</div>
+						</div>
+						<div id="for2" class="marcas" ng-if="pregunta.pregunta.tipo == 'imagen'" ng-init="content = false">
+							<div class="itemMarcas" ng-repeat="res in pregunta.items" ng-class="{'overlay': pregunta.selected == res}" ng-click="pregunta.selected = res" data-selc="{{res.num}}" ng-if="pregunta.pregunta.tipo_seleccion == 'unica' && res.opcion != ''" data-selc="{{res.num}}" data-id="{{pregunta.pregunta.id}}">
+								<img src="{{respuestas.router + res.opcion}}" alt="{{res.num}}" />
+							</div>
+							<div class="itemMarcas" ng-repeat="res in pregunta.items" ng-class="{'overlay': content}" ng-click="content == true ? content = false : content = true" data-selc="{{res.num}}" ng-if="pregunta.pregunta.tipo_seleccion == 'multiple' && res.opcion != ''" data-selc="{{res.num}}" data-id="{{pregunta.pregunta.id}}">
+								<img src="{{respuestas.router + res.opcion}}" alt="{{res.num}}" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot" style="padding: 5px 5%;">
+			<button class='btn' ng-click="sigPregunta(pregunta.pregunta.key, pregunta.pregunta.id, pregunta.pregunta.tipo, pregunta.pregunta.tipo_seleccion, pregunta.pregunta.orden)">
+				SIGUIENTE
+			</button>
+			<!--  ui-sref="app.yagansestadocivil -->
+		</div>
+</ion-view>

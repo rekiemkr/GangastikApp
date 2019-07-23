@@ -1,0 +1,167 @@
+<div class="image" ng-controller="CardCtrl">
+				<div class="iconsCard10" ng-style="icondis">
+					<span ng-click="abrirDescripcion()" href="#"><span class="icon-info">	</span></span>
+					<span ng-click="compartir(card.id, card.tipo)"><span class="icon-in"></span></span>
+				</div>
+				<div class="horario">
+					<div class="timeBig" data-fecha="{{card.informacion.vencimiento}}">
+						<!--count-down date="{{card.informacion.vencimiento}}" producto="{{cards}}"></count-down-->
+						<timer interval="100" countdown="countdownVal"/>
+					</div>
+				</div>
+				<!--div class="flechas">
+					<div class="flech left" botom-absolute-window="35" ng-click="previous()"><span class="icon-arrow-left"></span></div>
+					<div class="flech rigth" botom-absolute-window="35" ng-click="next()"><span class="icon-arrow-right"></span></div>
+				</div-->
+				<div class="productLogo" ng-if="card.tipo == 'Patrocinado'">
+					<img ng-src="{{card.rootImg + card.informacion.logo}}" />
+				</div>
+				<div class="figure">
+					<!--ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+						<ion-slide ng-repeat="image in card.informacion.imagenes">
+							<img ng-src="{{card.rootImg + 'img' + image.imagen}}" />
+						</ion-slide>
+					</ion-slide-box-->
+					<img ng-src="{{card.rootImg + 'img' +card.informacion.imagenes[0].imagen}}" preload-imagen />
+					<div class="loading-imagenP">
+						<figure>
+							<img src="img/loading.gif" alt="loading" />
+						</figure>
+					</div>
+					<div class="shoppingIcon">
+						<div id="carrito1" class="figureCar kanasanimar" ng-style="icondis" ng-click="agregarCanastika(card.id, card.tipo, card.informacion.nombre, card.informacion.preguntas, card.informacion.restantes)" click-animar="done()">
+							<img src="img/shoppingCartIcon.png" alt="carrito" />
+						</div>
+					</div>
+					<div id="productName" botom-absolute-div="2">
+						<div class="productName">{{card.informacion.nombre}}</div>
+					</div>
+					<!--div class="productIs">
+						<span class="Km">2</span>
+					</div-->
+				</div>
+				<div class="figcaption productStatus2" botom-absolute-div="0">
+					<div class="textoPrecio" ng-if="card.informacion.tipo_pago == 'texto'"><span>{{card.informacion.texto_pago}}</span></div>
+					<div class="antes" ng-if="card.informacion.tipo_pago == 'precio'">
+						<span class="destBig">${{card.informacion.precio_antes}}</span>
+						<span>ANTES</span>
+					</div>
+					<div class="descuento" ng-if="card.informacion.tipo_pago == 'precio'">
+						<span>{{card.descuento}}%</span>
+					</div>
+					<div class="ahora" ng-if="card.informacion.tipo_pago == 'precio'">
+						<span class="destBig">${{card.informacion.precio_ahora}}</span>
+						<span>AHORA</span>
+					</div>
+				</div>
+				<!--div class="moreDetails" botom-absolute-div="0">
+					<div class="moreDetailsInt">
+						<span>DESLIZA PARA VER MAS DETALLES </span>
+						<div class="turn2"></div>
+					</div>
+				</div-->
+			</div><!--producto-->
+			<div class="descripcion" ng-class="descrip">
+				<div class="textocoments">
+					<div class="textoC" ng-style="texto">
+						<div class="iconsCard10">
+							<span ng-click="cerrarDescripcion()"><span class="icon-close"></span></span>
+						</div>
+						<div class="shippingIcon2">
+							<img id="carrito2" src="img/shoppingCartIcon2.png" alt="" ui-sref="app.canastika">
+						</div>
+						<!--div class="descrip">
+							<p>SUMA <b>{{card.gangsP}} GANGS</b></p>
+							<p>SI LO LLEVAS A TU CANÃSTIKA</p>
+						</div-->
+						<div style="height: 80px;"></div>
+						<div class="condiciones">
+							<span class="infoP">
+								INFORMACIÓN <br>DEL PRODUCTO	
+							</span>
+							<span class="infoP">
+								CONDICIONES<br>DE LA OFERTA	
+							</span>
+							<span class="infoP">
+								¿DÓNDE <br>COMPRAR?	
+							</span>
+						</div>
+						<div class="steps">
+							<div class="imgteps">
+								<div class="linea"></div>
+								<div class="puntos" ng-style="puntosInfo">
+									<div class="circle" ng-click="clickInfoP()" ng-class="circP1">
+										<div></div>
+									</div>
+									<div class="circle" ng-click="clickInfoO()" ng-class="circP2">
+										<div></div>
+									</div>
+									<div class="circle" ng-click="clickInfoC()" ng-class="circP3">
+										<div></div>
+									</div>
+								</div>
+							</div>
+							<!--img src="img/productsBar.png" alt=""-->
+						</div>
+						<div class="sep2"></div>
+						<div class="productName2">{{card.informacion.nombre}}</div>
+						<div class="subItem">
+							<span class="subit1">
+								<span class="icon-badge"></span>
+								ACCESORIOS
+							</span>
+							<span class="subit2">
+								<div class="starsR">
+									<span class="icon-star {{estrella.calif}}" ng-repeat="estrella in califComent.num_estrellas"></span>
+								</div>
+									<div>{{card.cantidad_comentarios}} USUARIOS</div>
+									<span ng-click="abrirComents()" class="coment">Ver comentarios</span>
+							</span>
+						</div>
+						<!--div class="txtGangs7" dato-html="card.informacion.texto" ng-style="infoproducto">
+						</div-->
+						<div class="cajocults txtGangs7" ng-style="oferta">
+							<p>
+								{{card.informacion.condiciones}}
+							</p>
+						</div>
+						<div class="cajocults txtGangs7" ng-style="infocomprar">
+							<div class="estableci" ng-repeat="estable in card.informacion.establecimientos">
+								<figure>
+									<img src="{{card.rootImg + estable.imagen}}" alt="{{estable.nombre}}" />
+								</figure>
+								<figcaption>
+									<b>Dirección: </b>{{estable.direccion}}<br />
+									<b>Teléfono: </b>{{estable.telefono}}
+								</figcaption>
+							</div>
+						</div>
+					</div>
+					<div class="comenC" ng-style="coment">
+						<div class="iconsCard10" ng-click="regInfo()">
+							<span><span class="icon-info"></span></span>
+						</div>
+						<div class="descrip2">
+							<p><b>COMENTARIOS</b></p>
+						</div>
+						<div class="sep3"></div>
+						<div class="productName2">{{card.informacion.nombre}}</div>
+						<div class="stars">
+							<span class="icon-star {{estrella.calif}}" ng-repeat="estrella in califComent.num_estrellas"></span>
+						</div>
+						<div class="users">{{card.cantidad_comentarios}} USUARIOS</div>
+						<div class="txtGangs71">
+							<ul>
+								<li ng-repeat="comentario in card.informacion.comentarios">{{comentario.texto}}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!--div class="moreDetails">
+					<div class="moreDetailsInt">
+						<span>MAS DETALLES </span>
+						<div class="turn">
+						</div>
+					</div>
+				</div-->
+			</div><!--descripcion-->

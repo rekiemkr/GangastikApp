@@ -1,0 +1,53 @@
+<ion-view view-title="productoCalif-view" cache-view="false">
+	<ion-content>
+		<div class="overYeiii" resize></div>
+		<div class="yeiCont flex-cent-comentarios" resize>
+			<div class="cjaComentarios">
+				<div class="comentcalf">
+					COMENTARIOS
+				</div>
+				<div class="titulo" style="font-weight: normal;">
+					{{dato.informacion.nombre}}
+				</div>
+				<div class="calificacionCal">
+					<div class="estrellas">
+						<span id="icon1" class="icon-star {{estrella.calif}}" ng-repeat="estrella in califComent.num_estrellas" 
+							ng-class="{'staron': estrella.selected}" ng-click="selecionarEstrella(estrella)">
+						</span>
+					</div>
+					<div class="subt" style="font-weight: normal;">
+						CALIFICA EL PRODUCTO
+					</div>
+				</div>
+				<div class="comentaCalf">
+					<form ng-submit="enviarComentario(dato.id)">
+						<textarea ng-model="califComent.comentarios" rows="4" placeholder="INGRESE TU COMENTARIO"></textarea>
+						<div class="flex-end">
+							<button>ENVIAR</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card14" altura-porcentaje="85">
+				<div class="image" ng-controller="CardCtrl">
+					<div class="iconsCard10" ng-style="icondis">
+						<span ng-click="abrirDescripcion()" href="#"><span class="icon-info">	</span></span>
+						<span ui-sref="app.compartirp"><span class="icon-in"></span></span>
+					</div>
+					<div class="productLogo">
+						<img ng-src="{{dato.rootImg + dato.informacion.logo}}" />
+					</div>
+					<div class="figureCalif" botom-absolute-window="15">
+						<img ng-src="{{dato.rootImg + 'img' +dato.informacion.imagenes[0].imagen}}" />
+						<div id="productName topcalif">
+							<div class="productName">{{dato.informacion.nombre}}</div>
+						</div>
+					</div>
+				</div><!--producto-->
+				</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,62 @@
+<ion-view view-title="yaganredimir-view" cache-view="false">
+	<ion-content>
+		<div class="overYeiii" resize></div>
+		<div class="yeiCont" resize>
+			<div class="yeiTit3 blodGg">¿QUIERES?</div>
+			<div class="yeiQuier">
+				<div class="quieCirc">
+					<img src="img/circles_01.png" alt="">
+				</div>
+				<div class="quieBtn">
+					<button class='btn3' ng-click="redimirPuntoVenta()">REDIMIR EN EL PUNTO DE VENTA</button><!--ui-sref="app.yaganredimirpunto"-->
+				</div>
+			</div>
+			<div class="yeiQuier2">
+				<div class="quieCirc">
+					<img src="img/circles_02.png" alt="">
+				</div>
+				<div class="quieBtn">
+					<button class='btn3' ui-sref="app.yaganrecibicasa">RECIBIR EN CASA</button>
+				</div>
+			</div>
+		</div>
+		<div class="sep10"></div>
+		<div class="content6">
+			<div class="card14" style="background-image: url({{dato.rootImg + 'img' + dato.informacion.imagenes[0].imagen}});" altura-porcentaje="67">
+				<div class="iconsCard10">
+					<a href="#"><span class="icon-info iconR"></span></a>
+				</div>
+				<div class="enun">
+					SUMA <b>{{dato.gangsP}} GANGS</b><br>
+					SI COMPRAS EL PRODUCTO
+				</div>
+				<div class="horario2">
+					<div class="timeBig2">
+					</div>
+				</div>
+				<div id="productName2">
+					<div class="sep2"></div>
+					<div class="productName">{{dato.informacion.nombre}}</div>
+				</div>
+				<div class="productStatus2">
+					<div class="antes">
+						<span class="destBig">${{dato.informacion.precio_antes}}</span>
+						<span>ANTES</span>
+					</div>
+					<div class="descuento">
+						<span>{{dato.descuento}}%</span>
+					</div>
+					<div class="ahora">
+						<span class="destBig">${{dato.informacion.precio_ahora}}</span>
+						<span>AHORA</span>
+					</div>
+				</div>
+				<div class="moreDetails">
+					<div class="moreDetailsInt">
+						<span class="int2">REDIMIR PRODUCTO</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

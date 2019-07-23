@@ -1,0 +1,26 @@
+<ion-view view-title="genero">
+	<ion-content>
+		<div class="row row-center row-no-padding">
+			<div class="cj2">
+				<div class="head">
+					<img src="img/logo.png" alt="">
+				</div>
+				<section class="content2 flexCol vhCen">
+					<div class="navi">
+						<img src="img/navi2.jpg" alt="">
+					</div>
+					<div id="for3">
+						<div class="generoTitle vhCen">Tu género:</div>
+						<div class="generoSect vhCen" ng-repeat="gine in generosS.items" ng-class="{'activeC': generosS.ed == gine}" ng-click="generosS.ed = gine" data-genero="{{gine.gen}}">
+							<div class="vhCen {{gine.classFondo}}">{{gine.titulo}}</div>
+						</div>
+						<div class="generoTitle vhCen"></div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<div class="foot">
+			<button class='btn' ng-click="sig3()">SIGUIENTE</button>
+		</div>
+	</ion-content>
+</ion-view>

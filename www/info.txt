@@ -1,0 +1,72 @@
+1. click otro amigo y recarga o limpia los datos al enviar - elimina invitar desde facebook
+2. usrio inclu services
+3. nuevo campo repetir contrae'a
+4. seran voy acomprar y fueron ya los comprados
+5. tipsservices solo una ves por priemra vez
+6. 1% del valor del producto
+7. regalar se elimina
+8. preguntas por directivas
+9. preguntas repondidas cada 100 preguntas
+10. condiciones de envio ocultarla
+11 eliminar despues delo wow
+12. mas detalles ocultar.
+ redimmir producto =
+13. Al dar click redimir tienda llama al servicio RedimirProductoService.php
+14. cchek de agregar otro amigo sale alert de aceptar o no aceptar otro amigo en el registro
+15. tu opinion depues de terminar el avatar se elimina.
+
+16. com.gangastik.app id facebook app
+
+16.1 git clone https://github.com/Wizcorp/phonegap-facebook-plugin.git
+
+17.  git clone https://github.com/Wizcorp/phonegap-facebook-plugin.git
+		17 https://ionicthemes.com/tutorials/about/native-facebook-login-with-ionic-framework
+
+
+
+ //------------comandos requeridos------------------
+
+ 1. cordova platform update android
+ 2. cordova plugin add cordova-plugin-network-information
+ 3. cordova plugin add com.lampa.startapp (android)
+ 4. cordova plugin add https://github.com/lampaa/com.lampa.startapp.git (android)
+ 5. cordova plugin rm com.lampa.startapp
+ 		https://github.com/lampaa/com.lampa.startapp
+ 6. cordova -d plugin add phonegap-facebook-plugin --variable APP_ID="517668868431659" --variable APP_NAME="com.gangastik.app"
+
+ 7. cordova plugin add org.apache.cordova.geolocation //geocolazicacion
+
+ //cordova -d plugin add phonegap-facebook-plugin --variable APP_ID="725805987574033" --variable APP_NAME="com.ionic_facebook_integration.app"
+
+ <preference name="Orientation" value="portrait" />
+
+
+ On OS X, run: 
+keytool -exportcert -alias androiddebugkey -keystore ~/.android/debug.keystore | openssl sha1 -binary | openssl base64 
+
+On Windows, use: 
+keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | openssl sha1 -binary | openssl base6
+
+keytool -exportcert -alias ALIAS_HERE -keystore gangastik/mykey.keystore | openssl sha1 -binary | openssl base64
+
+ //http://jianjye.com/how-to-set-up-apache-cordova-facebook-plugin-and-parse-in-ionic-framework-v2/
+
+ //plugins
+
+ 1. tindercards2
+ 2. https://github.com/paveisistemas/ionic-image-lazy-load
+
+
+
+ /*
+ -ionic datepiker.
+
+ --positivos positos 
+ --cssClass
+ --cambior boton alertas []
+ --colcar icono para mostrar tips de juego []
+ --quitar campo obligatiorio password []
+ --aumentar tamaño fuente editar perfil []
+ --recuoperar contraseña []
+ --ver donde coprar agregar una x que regrsa a carrito o otra secco []
+ */

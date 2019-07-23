@@ -1,0 +1,55 @@
+<ion-view view-title="perfiledit-view" cache-view="false">
+	<div class="row row-center row-no-padding">
+		<div class="perfilcj">
+			<div class="arrowBack" ui-sref="app.perfil">
+				<span class="icon-arrow-left"></span>
+			</div>
+			<div class="avatar">
+				<div class="bigIcon"></div>
+			</div>
+			<div id="height-auto" class="perfilContent" altura-porcentaje="60">
+				<form ng-submit="actualizarPerfil(dato.id)">
+					<div id="perfil-heigth-ato" class="perfil perfilName">
+						<input type="text" ng-model="dato.nombre" name="nameAct" />
+						<span class="subPerfil">NOMBRES</span>
+					</div>
+					<div id="perfil-heigth-ato" class="perfil perfilName">
+						<input type="text" ng-model="dato.apellido" name="apellidoAct" />
+						<span class="subPerfil">APELLIDOS</span>
+					</div>
+					<div id="perfil-heigth-ato" class="perfil" ng-if="!facebook">
+						<input type="email" name="emailAct" ng-model="dato.email" />
+						<span class="subPerfil">EMAIL</span>
+					</div>
+					<div id="perfil-heigth-ato" class="perfil">
+						<input type="text" name="ccAct" ng-model="dato.cc" /><!--ng-if="dato.cc == ''"-->
+						<span class="subPerfil">CÉDULA</span>
+					</div>
+					<div id="perfil-heigth-ato" class="perfil">
+						<input type="text" name="dateAct" ng-model="dato.nacimiento" ng-click="openDatePicker()" ng-if="android" />
+						<input class="dateclass placeholderclass" type="date" placeholder="{{dato.nacimiento}}" ng-model="dato.nacimiento" ng-if="ios" ng-click="removePlaceholder()" />
+						<span class="subPerfil">FECHA NACIMIENTO</span>
+					</div>
+					<div id="perfil-heigth-ato" class="perfil">
+						<select id="ciudad" ng-model="ciudad">
+							<option value="" disabled>Selecione</option>
+							<option ng-repeat="item in ciudades" value="{{item.id}}" ng-selected="{{item.id == dato.idciudad}}">{{item.nombre}}</option>
+						</select>
+						<span class="subPerfil">CIUDAD</span>
+					</div>
+					<div id="perfil-heigth-ato" class="perfil" ng-if="!facebook">
+						<input type="password" name="passaAct" ng-model="dato.passaAct" />
+						<span class="subPerfil">CONTRASEÑA</span>
+					</div>
+					<div class="perfil" ng-if="!facebook">
+						<input type="password" name="passbAct" ng-model="dato.passbAct" />
+						<span class="subPerfil">REPITE LA CONTRASEÑA</span>
+					</div>
+					<div class="perfil perfilBtn">
+						<button class="btnEditarPerfil">GUARDAR</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</ion-view>

@@ -1,0 +1,73 @@
+<ion-view view-title="variabledos-view" cache-view="false">
+	<td-cards>
+		<td-card ng-repeat="card in cards" on-destroy="cardDestroyed($index)"
+			on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)" class="card-{{$index}}" altura-porcentaje="85" centhorizontal-sinw>
+			<div class="image" ng-controller="CardCtrl">
+				<div class="horario">
+					<div class="timeBig">
+						<span class="hours">24</span>
+						<span class="minBag"></span>
+						<span class="minutes">45</span>
+						<span class="seconds">01</span>
+					</div>
+				</div>
+				<div class="figure">
+					<img ng-src="{{card.image}}">
+					<div class="shoppingIcon">
+						<div id="carrito1" class="figureCar" ng-style="icondis" ui-sref="app.canastika">
+							<img src="img/shoppingCartIcon.png" alt="carrito" />
+						</div>
+					</div>
+					<div id="productName">
+						<div class="productName">{{card.title}}</div>
+					</div>
+					<div class="productIs">
+						<span class="Km">2</span>
+					</div>
+				</div>
+			</div><!--producto-->
+			<div id="overProd" class="overProdCont">
+				<p class="goldTit">GANAS 500 GANGS</p>
+				<div class="var80"></div>
+				<div class="productName2">RELOJ FOSSIL CRONOGRAFO</div>
+				<div class="subItem">
+					<span class="subit1">
+						<span class="icon-badge"></span>
+						ACCESORIOS
+					</span>
+					<span class="subit2">
+						<div class="stars2">
+							<span class="icon-star staron"></span>
+							<span class="icon-star staron"></span>
+							<span class="icon-star staron"></span>
+							<span class="icon-star staron"></span>
+							<span class="icon-star staroff"></span>
+							<div>150 USUARIOS</div>
+						</div>
+					</span>
+				</div>
+				<div class="lockBig">
+					<div>
+						<img src="img/lock.png">
+					</div>
+				</div>
+				<p class="goldDisp">
+					Disponible para <br>
+					Gangastikos GOLD <br>
+				</p>
+				<p class="disponibleTit">20,000 GANGS</p>
+				<div class="dest8">
+					<div>
+						SIGUIENTE PRODUCTO
+						<span class="icon-arrow-right"></span>
+					</div>
+				</div>
+			</div>
+		</td-card>
+		<td-card id="end-card" drag="false" altura-porcentaje="85" centhorizontal-sinw>
+			<div class="flex-center" style="height: 100%;">
+				<i class="icon ion-ios-refresh disable-user-behavior" ng-click="refreshCards()"></i>
+			</div>
+		</td-card>
+	</td-cards>
+</ion-view>
